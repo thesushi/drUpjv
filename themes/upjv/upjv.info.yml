@@ -1,0 +1,27 @@
+# core: 8.x
+
+type: theme
+base theme: 'bootstrap'
+core: '8.x'
+
+name: 'UPJV'
+description: 'Charte UPJV.'
+package: 'Bootstrap'
+
+libraries:
+  - 'upjv/base'
+
+regions:
+  upjv_area: 'UPJV Area'
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  upjv_slider: 'UPJV Slider'
+  upjv_info_bloc_actu: 'UPJV Info Bloc : Actualités'
+  upjv_info_bloc_vous: 'UPJV Info Bloc : Vous êtes'
+  upjv_info_bloc_zoom: 'UPJV Info Bloc : Zoom sur'
+  content: 'Content'
+  upjv_pre_footer: 'UPJV Pre-FOOTER'
+  upjv_pre_footer_logo: 'UPJV Pre-FOOTER logo'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'

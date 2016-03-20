@@ -1,0 +1,65 @@
+<div id="bandeau_visuel">
+	
+
+	{{ content.field_image.0 }}
+</div>
+<div id="page_deco">
+
+<div id="avec_nav_sans_encadres" class="contenu">
+
+<h1>{{ content.field_sous_titre.0 }}</h1>
+
+
+<div><div class="ligne_1"><div class="colonne_1">
+				<div class="colonne_deco"><div class="style_1">
+								{{ content.body.0 }}
+						</div><!-- .style_1 --><div class="style_3">
+								{{ content.field_sous_collone.0 }}
+						</div><!-- .style_3 --></div><!-- colonne_deco -->
+			</div><!-- .colonne_1 --><div class="colonne_2">
+				<div class="colonne_deco"><div class="style_4">
+					{{ content.field_colo.0 }}
+						</div><!-- .style_4 --><div class="style_1">
+							{{ content.field_sous_co.0 }}
+						</div><!-- .style_1 --></div><!-- colonne_deco -->
+			</div><!-- .colonne_2 --></div><!-- .ligne_1 -->
+
+
+</div><!-- / -->
+		
+
+
+
+	{% if content.field_file_share.0 %}
+	<div id="partage">
+		<strong class="h2">Partager</strong>
+		<ul id="boutons_actions">
+		<li id="partage_pdf">
+					<span class="fa fa-file"></span> 
+					{{ content.field_file_share.0 }}
+		</li>
+		</ul>
+	</div><!-- #partage -->
+	{% endif %}
+		
+		</div>
+
+
+		<div id="navigation">
+
+
+
+
+
+
+
+
+
+
+<div id="rubrique_niveau_2">
+		{{ label }}
+	</div><ul id="menu_secondaire"></ul><!-- #menu_secondaire -->
+
+				
+</div>
+</div>

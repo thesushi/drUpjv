@@ -1,0 +1,11 @@
+base:
+  version: 1.x
+  css:
+    theme:
+     css/font-awesome.css: {}
+     css/font.css: {}
+     css/style.css: {}
+     css/upjv.css: {}
+  js:
+   js/upjv.js: {}
+   js/jssor.slider.min.js: {}
