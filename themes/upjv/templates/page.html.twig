@@ -243,17 +243,14 @@
  {% endblock %}
 {% endif %}
 
-{# UPJV PRE FOOTER LOGO #}
-{% if page.upjv_pre_footer_logo %}
- {% block upjv_pre_footer_logo %}
-
 <p id="pied_page_logos">
     
-    {{ page.upjv_pre_footer_logo }}
-    </p>
+    <a href="#" > 
+      <img alt="Logo upjv" data-entity-type="file" data-entity-uuid="6689338e-8ef3-41d0-bf08-8dedf6df37bb" src="https://www.u-picardie.fr/fichiers_usinesite/ksup/logo_pied_1/logo-UPJV.png" />
+    </a>
 
- {% endblock %}
-{% endif %}
+    
+    </p>
 
 {% if page.footer %}
   {% block footer %}
