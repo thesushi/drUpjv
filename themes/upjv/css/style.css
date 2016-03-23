@@ -1007,7 +1007,7 @@ input[readonly]:focus, input[readonly]:active,
   #pied_page_rubriques {
     padding: 0 2em;
   }
-  #pied_page_rubriques > div {
+  #pied_page_rubriques > section {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -4558,3 +4558,10 @@ li.parite_1 {
         width : 25%;
       }
   }
+
+#page {
+  box-shadow: 0 0 10px 10px rgba(168,168,183,0.2);
+}
+#pied_page {
+  box-shadow: 0 20px 10px 10px rgba(168,168,183,0.2);
+}
