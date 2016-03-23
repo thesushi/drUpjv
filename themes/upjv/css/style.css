@@ -4566,3 +4566,13 @@ li.parite_1 {
 #pied_page {
   box-shadow: 0 20px 10px 10px rgba(168,168,183,0.2);
 }
+
+@media screen and (min-width: 55em) {
+
+  .ligne_1 > .colonne_1.fiftyFifty {
+        width : 50%;
+      }
+  .ligne_1 > .colonne_2.fiftyFifty {
+        width : 50%;
+      }
+  }
