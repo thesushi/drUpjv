@@ -1,15 +1,19 @@
 {% if content.field_sous_titre.0 %}
+
+{% if content.field_image.0 %}
 <div id="bandeau_visuel">
 	
 
 	{{ content.field_image.0 }}
 </div>
+{% endif %}
 <div id="page_deco">
 
 <div id="avec_nav_sans_encadres" class="contenu">
 
+{% if content.field_sous_titre.0 %}
 <h1>{{ content.field_sous_titre.0 }}</h1>
-
+{% endif %}
 
 <div>
 
@@ -17,63 +21,83 @@
 
 	<div class="colonne_1">
 				<div class="colonne_deco">
-
+					{% if content.field_tite.0 %}
 				<div class="style_1">
 								<h2><span>{{ content.field_tite.0 }}</span></h2>
 				</div><!-- .style_1 -->
-
+				{% endif %}
+				{% if content.field_colonne_1_1.0 %}
 						<div class="style_4">
 								{{ content.field_colonne_1_1.0 }}
 						</div><!-- .style_3 -->
-
+						{% endif %}
+						{% ifcontent.field_aide_colonne1.0  %}
 							<div class="style_3">
 								{{ content.field_aide_colonne1.0 }}
 						</div><!-- .style_3 -->
+						{% endif %}
+						{% if content.field_tit.0 %}
 						<div class="style_1">
 								<h2><span>{{ content.field_tit.0 }}</span></h2>
 						</div>
+						{% endif %}
+						{% if content.field_colonne.0  %}
 						<div class="style_4">
 								{{ content.field_colonne.0 }}
 						</div><!-- .style_3 -->
+						{% endif %}
+						{% if content.field_infos_sous_colonne_1.0  %}
 						<div class="style_3">
 								{{ content.field_infos_sous_colonne_1.0 }}
 						</div><!-- .style_3 -->
+						{% endif %}
 
 					</div><!-- colonne_deco -->
 			</div><!-- .colonne_1 -->
 
 			<div class="colonne_2">
 				<div class="colonne_deco">
-
+				{% if content.field_titre_colonne_2_1.0 or content.field_colonne_2_1.0 %}
 				<div class="style_1">
+								{% if content.field_titre_colonne_2_1.0  %}
 							<h2>{{ content.field_titre_colonne_2_1.0 }}</h2>
+							{% endif %}
+							{% if content.field_colonne_2_1.0 %}
 							<div class="toolbox">
 						{{ content.field_colonne_2_1.0 }}
-					</div>
+						</div>
+						{% endif %}
 						</div><!-- .style_1 -->
+						{% endif %}
+
+						{% if content.field_info.0 %}
 						<div class="style_3">
 								{{ content.field_info.0 }}
 						</div><!-- .style_3 -->
-
+						{% endif %}
+						{% if content.field_u.0 %}
 					<div class="style_1">
 							
 							<div class="toolbox">
 						{{ content.field_u.0 }}
 						</div>
 					</div><!-- .style_1 -->
+					{% endif %}
+					{% if content.field_bloc_texte_colonne_2.0 %}
 					<div class="style_1">
 							
 							<div class="toolbox">
 						{{ content.field_bloc_texte_colonne_2.0 }}
 						</div>
 					</div><!-- .style_1 -->
+						{% endif %}
 
 
-
+{% if content.field_in.0 %}
 				<div class="style_3">
 					{{ content.field_in.0 }}
 
-						</div><!-- .style_3 -->
+						</div><!-- .style_3 -->	{% endif %}
 
 						
 
