@@ -1,4 +1,4 @@
-{% if content.field_pre‎.0 %}
+
 {% if content.field_image.0 %}
 <div id="bandeau_visuel">
 
@@ -10,15 +10,17 @@
 
     <div id="avec_nav_sans_encadres" class="contenu">
 
-        {% if content.body.0 %}
-        <h1>{{ content.body.0 }}</h1>
+        {% if label %}
+       
+        <h1>{{ label }}</h1>
         {% endif %}
 
 
         <div>
 
-            <p id="date">Actualité le {{ content.field_date_news }}</p>
+            <p id="date">Actualité le : {{ content.field_date_news.0 }}</p>
 
+            {{ content.body }}
 
         </div><!-- / -->
 
@@ -41,11 +43,13 @@
     <div id="navigation">
 
         <div id="rubrique_niveau_2">
-            {{ content.field_pre‎.0 }}
+            {{ content.field_pre.0 }}
         </div>
-        <ul id="menu_secondaire"></ul><!-- #menu_secondaire -->
+
+         {%if content.field_image.0 %}
+            <p>{{content.field_image.0}} </p>
+        {% endif %}
 
 
     </div>
 </div>
-{% endif %}
