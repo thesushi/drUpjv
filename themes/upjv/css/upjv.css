@@ -18,6 +18,6 @@
 div.centeredText {
     text-align: center;
 }
-div.centeredText > h2, h3, h4, h5, h6 {
+div.centeredText  h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }

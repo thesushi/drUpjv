@@ -1,0 +1,51 @@
+{% if content.field_pre‎.0 %}
+{% if content.field_image.0 %}
+<div id="bandeau_visuel">
+
+
+    {{ content.field_image_band.0 }}
+</div>
+{% endif %}
+<div id="page_deco">
+
+    <div id="avec_nav_sans_encadres" class="contenu">
+
+        {% if content.body.0 %}
+        <h1>{{ content.body.0 }}</h1>
+        {% endif %}
+
+
+        <div>
+
+            <p id="date">Actualité le {{ content.field_date_news }}</p>
+
+
+        </div><!-- / -->
+
+
+        {% if content.field_file_share.0 %}
+        <div id="partage">
+            <strong class="h2">Partager</strong>
+            <ul id="boutons_actions">
+                <li id="partage_pdf">
+                    <span class="fa fa-file"></span>
+                    {{ content.field_file_share.0 }}
+                </li>
+            </ul>
+        </div><!-- #partage -->
+        {% endif %}
+
+    </div>
+
+
+    <div id="navigation">
+
+        <div id="rubrique_niveau_2">
+            {{ content.field_pre‎.0 }}
+        </div>
+        <ul id="menu_secondaire"></ul><!-- #menu_secondaire -->
+
+
+    </div>
+</div>
+{% endif %}
