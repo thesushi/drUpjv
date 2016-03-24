@@ -101,6 +101,14 @@
   {% endblock %}
 {% endif %}
 
+{# UPJV HOME #}
+{% if page.upjv_home %}
+ {% block upjv_home %}
+ <div class="upjv_home container">{{page.upjv_home}}</div>
+ {% endblock %}
+{% endif %}
+
+
 {# UPJV SLIDER #}
 {% if page.upjv_slider %}
  {% block upjv_slider %}
