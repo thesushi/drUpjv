@@ -16,6 +16,7 @@ regions:
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   upjv_slider: 'UPJV Slider'
+  upjv_contact: 'UPJV Contact Information'
   upjv_info_bloc_actu: 'UPJV Info Bloc : Actualités'
   upjv_info_bloc_vous: 'UPJV Info Bloc : Vous êtes'
   upjv_info_bloc_zoom: 'UPJV Info Bloc : Zoom sur'
