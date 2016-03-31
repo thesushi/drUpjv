@@ -44,29 +44,27 @@
  * @ingroup templates
  */
 #}
-{%
-  set body_classes = [
-    logged_in ? 'user-logged-in',
-    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
-    node_type ? 'page-node-type-' ~ node_type|clean_class,
-    db_offline ? 'db-offline',
-    theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
-    node_type ? 'no-js fiche pagelibre rubrique institutionnel' :  'js fiche pagelibre accueil institutionnel',
-  ]
-%}
+{% set body_classes = [
+logged_in ? 'user-logged-in',
+not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+node_type ? 'page-node-type-' ~ node_type|clean_class,
+db_offline ? 'db-offline',
+theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
+node_type ? 'no-js fiche pagelibre rubrique institutionnel' :  'js fiche pagelibre accueil institutionnel',
+] %}
 <!DOCTYPE html>
 <html {{ html_attributes }}>
-  <head>
+<head>
     <head-placeholder token="{{ placeholder_token|raw }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">
-  </head>
-  <body{{ attributes.addClass(body_classes) }}>
-   
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-  </body>
+        <title>{{ head_title|safe_join(' | ') }}</title>
+        <css-placeholder token="{{ placeholder_token|raw }}">
+            <js-placeholder token="{{ placeholder_token|raw }}">
+                </head>
+<body{{ attributes.addClass(body_classes) }}>
+
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+<js-bottom-placeholder token="{{ placeholder_token|raw }}">
+</body>
 </html>

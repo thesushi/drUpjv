@@ -24,37 +24,37 @@
 #}
 
 <div id="menu">
-<div id="menu_principal_deco">
-{{ menus.menu_links(items, 0) }}
+    <div id="menu_principal_deco">
+        {{ menus.menu_links(items, 0) }}
 
-{% macro menu_links(items, menu_level) %}
-  {% import _self as menus %}
-  {% if items %}
-   
-    {% if menu_level == 0 %}
-      <ul id="menu_principal" data-unfold-target="menu_principal">
-    {% else %}
-      <ul>
-    {% endif %}
-    {% for item in items %}
+        {% macro menu_links(items, menu_level) %}
+        {% import _self as menus %}
+        {% if items %}
 
-        <li>
-        {% if item.in_active_trail  %}
-         <em> 
-        {% endif %}
-        <a href="{{ item.url }}" > {{ item.title }}</a>
- {% if item.in_active_trail  %} 
- </em> 
-        {% endif %}
+        {% if menu_level == 0 %}
+        <ul id="menu_principal" data-unfold-target="menu_principal">
+            {% else %}
+            <ul>
+                {% endif %}
+                {% for item in items %}
 
-      {% if item.below %}
-        {{ menus.menu_links(item.below, menu_level + 1) }}
-      {% endif %}
+                    <li>
+                        {% if item.in_active_trail %}
+                        <em>
+                            {% endif %}
+                            <a href="{{ item.url }}"> {{ item.title }}</a>
+                            {% if item.in_active_trail %}
+                        </em>
+                        {% endif %}
 
-      </li>
-    {% endfor %}
-    </ul>
-     {% endif %}
-{% endmacro %}
-</div>
+                        {% if item.below %}
+                            {{ menus.menu_links(item.below, menu_level + 1) }}
+                        {% endif %}
+
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endmacro %}
+    </div>
 </div>

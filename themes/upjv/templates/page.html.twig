@@ -63,280 +63,318 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 <div id="page">
-{# UPJV AREA #}
-{% if page.upjv_area %}
- {% block upjv_area %}
- {{page.upjv_area}}
- {% endblock %}
-{% endif %}
- 
-{# Navbar #}
-{% if page.navigation %}
-  {% block navbar %}
-    {%
-      set navbar_classes = [
-       
-        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
-      ]
-    %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-      <div class="navbar-header">
-      
-        {# .btn-navbar is used as the toggle for collapsed navbar content #}
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      {# Navigation (collapsible) #}
-      {% if page.navigation_collapsible %}
-        <div class="">
-          {{ page.navigation_collapsible }}
-        </div>
-      {% endif %}
-    </header>
-  {% endblock %}
-{% endif %}
-
-{# UPJV HOME #}
-{% if page.upjv_home %}
- {% block upjv_home %}
- <div class="upjv_home container"><div class="style_3 centeredText">{{page.upjv_home}}</div></div>
- {% endblock %}
-{% endif %}
-
-
-{# UPJV SLIDER #}
-{% if page.upjv_slider %}
- {% block upjv_slider %}
- <div class="upjv_slider container">{{page.upjv_slider}}</div>
- <div class="clearfix"></div>
- {% endblock %}
-{% endif %}
-
-{# UPJV CONTACT #}
-{% if page.upjv_contact %}
- {% block upjv_contact %}
- <div class="upjv_contact container">{{page.upjv_contact}}</div>
- {% endblock %}
-{% endif %}
-
-
-
-      {# UPJV INFO BLOC Actu #}
-{% if page.upjv_info_bloc_actu %}
-
-<div id="page_deco">
-  <div id="contenu_sans_nav_sans_encadres" class="contenu">
-    <div>
-      <div class="ligne_1">
-
- {% block upjv_info_bloc_actu %}
-
- <div class="colonne_1">
-
- <div class="colonne_deco">
- <div class="style_2">
-                <h2><span>Actualités</span></h2>
-             
-                
-                   {{page.upjv_info_bloc_actu}}
-                   <div>
-                     
-                   </div>
-             
-                </div>
-                
-
-
- </div>
- </div>
- 
- {% endblock %}
-{% endif %}
-
-{# UPJV INFO BLOC Vous etes #}
-{% if page.upjv_info_bloc_vous %}
-  
-  {% if not page.upjv_info_bloc_actu %}
-    <div id="page_deco">
-  <div id="contenu_sans_nav_sans_encadres" class="contenu">
-    <div>
-      <div class="ligne_1">
-  {% endif %}
-
- {% block upjv_info_bloc_vous %}
-<div class="colonne_2">
-
- <div class="colonne_deco"><div class="style_2">
-                <h2><span>VOUS ÊTES</span></h2><div class="toolbox">
-                     {{page.upjv_info_bloc_vous}}
-              </div><!-- .toolbox -->
-            </div><!-- .style_2 --></div>
- </div>
- {% endblock %}
-{% endif %}
-
-{# UPJV INFO BLOC Zoom #}
-{% if page.upjv_info_bloc_zoom %}
-
-  {% if not page.upjv_info_bloc_actu and not page.upjv_info_bloc_vous %}
-    <div id="page_deco">
-  <div id="contenu_sans_nav_sans_encadres" class="contenu">
-    <div>
-      <div class="ligne_1">
-  {% endif %}
-
- {% block upjv_info_bloc_zoom %}
-<div class="colonne_3">
-
- <div class="colonne_deco"><div class="style_2">
-                <h2><span>Zoom sur</span></h2><div class="toolbox">
-                {{page.upjv_info_bloc_zoom}}
-              </div><!-- .toolbox -->
-            </div><!-- .style_2 --></div>
-
-            </div>
- {% endblock %}
-{% endif %}
-
-
-
-{% if page.upjv_info_bloc_actu %}
-
-</div>
-</div>
-</div>
-
-</div>
-{% elseif page.upjv_info_bloc_vous %}
-</div>
-</div>
-</div>
-
-</div>
-{% elseif page.upjv_info_bloc_zoom %}
-</div>
-</div>
-</div>
-
-</div>
-{% endif %}
-
-
-{# Main #}
-{% block main %}
-  <div role="main" class="main-container {{ container }} js-quickedit-main-content">
-    {# Content #}
-        {% block content %}
-          {{ page.content }}
+    {# UPJV AREA #}
+    {% if page.upjv_area %}
+        {% block upjv_area %}
+            {{ page.upjv_area }}
         {% endblock %}
+    {% endif %}
+
+    {# Navbar #}
+    {% if page.navigation %}
+        {% block navbar %}
+            {% set navbar_classes = [
+
+            theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+            ] %}
+            <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+                <div class="navbar-header">
+
+                    {# .btn-navbar is used as the toggle for collapsed navbar content #}
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                {# Navigation (collapsible) #}
+                {% if page.navigation_collapsible %}
+                    <div class="">
+                        {{ page.navigation_collapsible }}
+                    </div>
+                {% endif %}
+            </header>
+        {% endblock %}
+    {% endif %}
+
+    {# UPJV HOME #}
+    {% if page.upjv_home %}
+        {% block upjv_home %}
+            <div class="upjv_home container">
+                <div class="style_3 centeredText">{{ page.upjv_home }}</div>
+            </div>
+        {% endblock %}
+    {% endif %}
+
+    {# UPJV SLIDER #}
+    {% if page.upjv_slider %}
+        {% block upjv_slider %}
+            <div class="upjv_slider container">{{ page.upjv_slider }}</div>
+            <div class="clearfix"></div>
+        {% endblock %}
+    {% endif %}
+
+    {# UPJV CONTACT #}
+    {% if page.upjv_contact %}
+        {% block upjv_contact %}
+            <div class="upjv_contact container">{{ page.upjv_contact }}</div>
+        {% endblock %}
+    {% endif %}
+
+
+
+    {# UPJV INFO BLOC Actu #}
+    {% if page.upjv_info_bloc_actu %}
+
+    <div id="page_deco">
+        <div id="contenu_sans_nav_sans_encadres" class="contenu">
+            <div>
+                <div class="ligne_1">
+
+                    {% block upjv_info_bloc_actu %}
+
+                        <div class="colonne_1">
+
+                            <div class="colonne_deco">
+                                <div class="style_2">
+                                    <h2><span>Actualités</span></h2>
+
+                                    <div class="toolbox">
+                                        <div class="onglets multiples ui-tabs ui-widget ui-widget-content ui-corner-all">
+                                            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                                role="tablist">
+                                                <li aria-controls="onglet_1575174376000153165" aria-labelledby="ui-id-4"
+                                                    aria-selected="true"
+                                                    class="ui-state-default ui-corner-top ui-tabs-active ui-state-active"
+                                                    role="tab" tabindex="0"><a class="ui-tabs-anchor"
+                                                                               href="#onglet_1575174376000153165"
+                                                                               id="ui-id-4" role="presentation"
+                                                                               tabindex="-1">La Une</a></li>
+                                            </ul>
+
+                                            <div aria-expanded="true" aria-hidden="false" aria-labelledby="ui-id-4"
+                                                 class="ui-tabs-panel ui-widget-content ui-corner-bottom"
+                                                 id="onglet_1575174376000153165" role="tabpanel">
+
+
+                                                <ul class="objets actualites">
+                                                    {{ page.upjv_info_bloc_actu }}
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    {% endblock %}
+                    {% endif %}
+
+                    {# UPJV INFO BLOC Vous etes #}
+                    {% if page.upjv_info_bloc_vous %}
+
+                    {% if not page.upjv_info_bloc_actu %}
+                    <div id="page_deco">
+                        <div id="contenu_sans_nav_sans_encadres" class="contenu">
+                            <div>
+                                <div class="ligne_1">
+                                    {% endif %}
+
+                                    {% block upjv_info_bloc_vous %}
+                                        <div class="colonne_2">
+
+                                            <div class="colonne_deco">
+                                                <div class="style_2">
+                                                    <h2><span>VOUS ÊTES</span></h2>
+
+
+
+
+                                                        {{ page.upjv_info_bloc_vous }}
+
+
+
+
+                                                </div><!-- .style_2 --></div>
+                                        </div>
+                                    {% endblock %}
+                                    {% endif %}
+
+                                    {# UPJV INFO BLOC Zoom #}
+                                    {% if page.upjv_info_bloc_zoom %}
+
+                                    {% if not page.upjv_info_bloc_actu and not page.upjv_info_bloc_vous %}
+                                    <div id="page_deco">
+                                        <div id="contenu_sans_nav_sans_encadres" class="contenu">
+                                            <div>
+                                                <div class="ligne_1">
+                                                    {% endif %}
+
+                                                    {% block upjv_info_bloc_zoom %}
+                                                        <div class="colonne_3">
+
+                                                            <div class="colonne_deco">
+                                                                <div class="style_2">
+                                                                    <h2><span>Zoom sur</span></h2>
+                                                                    <div class="toolbox">
+                                                                        {{ page.upjv_info_bloc_zoom }}
+                                                                    </div><!-- .toolbox -->
+                                                                </div><!-- .style_2 --></div>
+
+                                                        </div>
+                                                    {% endblock %}
+                                                    {% endif %}
+
+
+
+                                                    {% if page.upjv_info_bloc_actu %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {% elseif page.upjv_info_bloc_vous %}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% elseif page.upjv_info_bloc_zoom %}
+                </div>
+            </div>
+        </div>
+
     </div>
-{% endblock %}
-
-{% if page.upjv_info_quatre_bloc_1 or page.upjv_info_quatre_bloc_2 or page.upjv_info_quatre_bloc_3 or page.upjv_info_quatre_bloc_4 %}
- <div class="ligne_2">
-{% endif %}
-
-{# UPJV 4 BLOCS #}
-{% if page.upjv_info_quatre_bloc_1 %}
- {% block upjv_info_quatre_bloc_1 %}
-
- <div class="colonne_1">
-        <div class="colonne_deco"><div class="style_3">
-              {{page.upjv_info_quatre_bloc_1}}
-              </div><!-- .style_3 -->
-        </div><!-- colonne_deco -->
-
-      </div>
-      <!-- .colonne_1 -->
- {% endblock %}
-{% endif %}
+    {% endif %}
 
 
-{# UPJV 4 BLOCS #}
-{% if page.upjv_info_quatre_bloc_2 %}
- {% block upjv_info_quatre_bloc_2 %}
+    {# Main #}
+    {% block main %}
+        <div role="main" class="main-container {{ container }} js-quickedit-main-content">
+            {# Content #}
+            {% block content %}
+                {{ page.content }}
+            {% endblock %}
+        </div>
+    {% endblock %}
 
- 
-      <div class="colonne_2">
-        <div class="colonne_deco"><div class="style_0">  {{page.upjv_info_quatre_bloc_2}}
-            </div><!-- .style_0 --></div><!-- colonne_deco -->
-      </div><!-- .colonne_2 -->
- {% endblock %}
-{% endif %}
+    {% if page.upjv_info_quatre_bloc_1 or page.upjv_info_quatre_bloc_2 or page.upjv_info_quatre_bloc_3 or page.upjv_info_quatre_bloc_4 %}
+    <div class="ligne_2">
+        {% endif %}
 
+        {# UPJV 4 BLOCS #}
+        {% if page.upjv_info_quatre_bloc_1 %}
+            {% block upjv_info_quatre_bloc_1 %}
 
-{# UPJV 4 BLOCS #}
-{% if page.upjv_info_quatre_bloc_3 %}
- {% block upjv_info_quatre_bloc_3 %}
-  <div class="colonne_3">
-        <div class="colonne_deco"><div class="style_3">  {{page.upjv_info_quatre_bloc_3}}
-            </div><!-- .style_3 --></div><!-- colonne_deco -->
-      </div><!-- .colonne_3 -->
- 
- {% endblock %}
-{% endif %}
+                <div class="colonne_1">
+                    <div class="colonne_deco">
+                        <div class="style_3">
+                            {{ page.upjv_info_quatre_bloc_1 }}
+                        </div><!-- .style_3 -->
+                    </div><!-- colonne_deco -->
 
-
-
-{# UPJV 4 BLOCS #}
-{% if page.upjv_info_quatre_bloc_4 %}
- {% block upjv_info_quatre_bloc_4 %}
-
-   
-
-      <div class="colonne_4">
-        <div class="colonne_deco"><div class="style_3">
-                  {{page.upjv_info_quatre_bloc_4}}
-            </div><!-- .style_3 --></div><!-- colonne_deco -->
-      </div><!-- .colonne_4 -->
-
- {% endblock %}
-{% endif %}
+                </div>
+                <!-- .colonne_1 -->
+            {% endblock %}
+        {% endif %}
 
 
-{% if page.upjv_info_quatre_bloc_1 or page.upjv_info_quatre_bloc_2 or page.upjv_info_quatre_bloc_3 or page.upjv_info_quatre_bloc_4 %}
- </div>
-{% endif %}
+        {# UPJV 4 BLOCS #}
+        {% if page.upjv_info_quatre_bloc_2 %}
+            {% block upjv_info_quatre_bloc_2 %}
+
+
+                <div class="colonne_2">
+                    <div class="colonne_deco">
+                        <div class="style_0">  {{ page.upjv_info_quatre_bloc_2 }}
+                        </div><!-- .style_0 --></div><!-- colonne_deco -->
+                </div><!-- .colonne_2 -->
+            {% endblock %}
+        {% endif %}
+
+
+        {# UPJV 4 BLOCS #}
+        {% if page.upjv_info_quatre_bloc_3 %}
+            {% block upjv_info_quatre_bloc_3 %}
+                <div class="colonne_3">
+                    <div class="colonne_deco">
+                        <div class="style_3">  {{ page.upjv_info_quatre_bloc_3 }}
+                        </div><!-- .style_3 --></div><!-- colonne_deco -->
+                </div><!-- .colonne_3 -->
+
+            {% endblock %}
+        {% endif %}
+
+
+
+        {# UPJV 4 BLOCS #}
+        {% if page.upjv_info_quatre_bloc_4 %}
+            {% block upjv_info_quatre_bloc_4 %}
+
+
+
+                <div class="colonne_4">
+                    <div class="colonne_deco">
+                        <div class="style_3">
+                            {{ page.upjv_info_quatre_bloc_4 }}
+                        </div><!-- .style_3 --></div><!-- colonne_deco -->
+                </div><!-- .colonne_4 -->
+
+            {% endblock %}
+        {% endif %}
+
+
+        {% if page.upjv_info_quatre_bloc_1 or page.upjv_info_quatre_bloc_2 or page.upjv_info_quatre_bloc_3 or page.upjv_info_quatre_bloc_4 %}
+    </div>
+    {% endif %}
 </div>
 <hr class="separateur_sections_page">
 
 <div id="pied_page">
 
 
-{# UPJV PRE FOOTER #}
-{% if page.upjv_pre_footer %}
- {% block upjv_pre_footer %}
+    {# UPJV PRE FOOTER #}
+    {% if page.upjv_pre_footer %}
+        {% block upjv_pre_footer %}
 
- <div id="pied_page_rubriques">
-    
-    {{ page.upjv_pre_footer }}
-    </div>
+            <div id="pied_page_rubriques">
 
- {% endblock %}
-{% endif %}
+                {{ page.upjv_pre_footer }}
+            </div>
 
-<p id="pied_page_logos">
-    
-    <a href="#" > 
-      <img alt="Logo upjv" data-entity-type="file" data-entity-uuid="6689338e-8ef3-41d0-bf08-8dedf6df37bb" src="https://www.u-picardie.fr/fichiers_usinesite/ksup/logo_pied_1/logo-UPJV.png" />
-    </a>
+        {% endblock %}
+    {% endif %}
 
-    
+    <p id="pied_page_logos">
+
+        <a href="#">
+            <img alt="Logo upjv" data-entity-type="file" data-entity-uuid="6689338e-8ef3-41d0-bf08-8dedf6df37bb"
+                 src="https://www.u-picardie.fr/fichiers_usinesite/ksup/logo_pied_1/logo-UPJV.png"/>
+        </a>
+
+
     </p>
 
-{% if page.footer %}
-  {% block footer %}
-    <footer class="footer {{ container }}" role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endblock %}
-{% endif %}
- <div id="pied_page_retour">
+    {% if page.footer %}
+        {% block footer %}
+            <footer class="footer {{ container }}" role="contentinfo">
+                {{ page.footer }}
+            </footer>
+        {% endblock %}
+    {% endif %}
+    <div id="pied_page_retour">
         <a href="#page"><span aria-hidden="true" class="fa fa-arrow-up"></span> Haut de page</a>
-      </div><!-- #retour_debut_ecran -->
+    </div><!-- #retour_debut_ecran -->
 </div>

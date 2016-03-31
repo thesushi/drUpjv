@@ -1,73 +1,73 @@
 {% if content.field_sous_titre.0 %}
-{% if content.field_image.0 %}
-<div id="bandeau_visuel">
+    {% if content.field_image.0 %}
+        <div id="bandeau_visuel">
 
 
-    {{ content.field_image.0 }}
-</div>
-{% endif %}
-<div id="page_deco">
-
-    <div id="avec_nav_sans_encadres" class="contenu">
-
-        {% if content.field_sous_titre.0 %}
-        <h1>{{ content.field_sous_titre.0 }}</h1>
-        {% endif %}
-
-
-        <div>
-
-            <div class="ligne_1">
-                <div class="colonne_1 fiftyFifty">
-                    <div class="colonne_deco">
-                    {% if content.field_colonne_1.0  %}
-                        <div class="style_1">
-                            {{ content.field_colonne_1.0 }}
-                        </div><!-- .style_1 -->  {% endif %}
-                        {% if content.field_sous_collone.0 %}
-                        <div class="style_3">
-                            {{ content.field_sous_collone.0 }}
-                        </div><!-- .style_3 -->  {% endif %}</div><!-- colonne_deco -->
-                </div><!-- .colonne_1 -->
-                <div class="colonne_2 fiftyFifty">
-                    <div class="colonne_deco">
-                    {% if content.field_colo.0 %}
-                        <div class="style_4">
-                            {{ content.field_colo.0 }}
-                        </div><!-- .style_4 -->  {% endif %}
-                        {% if content.field_sous_co.0 %}
-                        <div class="style_1">
-                            {{ content.field_sous_co.0 }}
-                        </div><!-- .style_1 -->  {% endif %}</div><!-- colonne_deco -->
-                </div><!-- .colonne_2 --></div><!-- .ligne_1 -->
-
-
-        </div><!-- / -->
-
-
-        {% if content.field_file_share.0 %}
-        <div id="partage">
-            <strong class="h2">Partager</strong>
-            <ul id="boutons_actions">
-                <li id="partage_pdf">
-                    <span class="fa fa-file"></span>
-                    {{ content.field_file_share.0 }}
-                </li>
-            </ul>
-        </div><!-- #partage -->
-        {% endif %}
-
-    </div>
-
-
-    <div id="navigation">
-
-        <div id="rubrique_niveau_2">
-            {{ label }}
+            {{ content.field_image.0 }}
         </div>
-        <ul id="menu_secondaire"></ul><!-- #menu_secondaire -->
+    {% endif %}
+    <div id="page_deco">
+
+        <div id="avec_nav_sans_encadres" class="contenu">
+
+            {% if content.field_sous_titre.0 %}
+                <h1>{{ content.field_sous_titre.0 }}</h1>
+            {% endif %}
 
 
+            <div>
+
+                <div class="ligne_1">
+                    <div class="colonne_1 fiftyFifty">
+                        <div class="colonne_deco">
+                            {% if content.field_colonne_1.0 %}
+                                <div class="style_1">
+                                    {{ content.field_colonne_1.0 }}
+                                </div><!-- .style_1 -->  {% endif %}
+                            {% if content.field_sous_collone.0 %}
+                                <div class="style_3">
+                                    {{ content.field_sous_collone.0 }}
+                                </div><!-- .style_3 -->  {% endif %}</div><!-- colonne_deco -->
+                    </div><!-- .colonne_1 -->
+                    <div class="colonne_2 fiftyFifty">
+                        <div class="colonne_deco">
+                            {% if content.field_colo.0 %}
+                                <div class="style_4">
+                                    {{ content.field_colo.0 }}
+                                </div><!-- .style_4 -->  {% endif %}
+                            {% if content.field_sous_co.0 %}
+                                <div class="style_1">
+                                    {{ content.field_sous_co.0 }}
+                                </div><!-- .style_1 -->  {% endif %}</div><!-- colonne_deco -->
+                    </div><!-- .colonne_2 --></div><!-- .ligne_1 -->
+
+
+            </div><!-- / -->
+
+
+            {% if content.field_file_share.0 %}
+                <div id="partage">
+                    <strong class="h2">Partager</strong>
+                    <ul id="boutons_actions">
+                        <li id="partage_pdf">
+                            <span class="fa fa-file"></span>
+                            {{ content.field_file_share.0 }}
+                        </li>
+                    </ul>
+                </div><!-- #partage -->
+            {% endif %}
+
+        </div>
+
+
+        <div id="navigation">
+
+            <div id="rubrique_niveau_2">
+                {{ label }}
+            </div>
+            <ul id="menu_secondaire"></ul><!-- #menu_secondaire -->
+
+
+        </div>
     </div>
-</div>
 {% endif %}

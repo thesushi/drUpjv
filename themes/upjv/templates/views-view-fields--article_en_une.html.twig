@@ -1,0 +1,17 @@
+{% if fields.title.content %}
+    <li class="avec_vignette"><!--          -->
+
+    <div class="vignette_deco" style="width:130px;">
+
+        {{ fields.field_image.content }}
+
+    </div>
+    <!--         -->
+
+    <div class="vignette_deco2">
+        <strong>{{ fields.title.content }}</strong>
+        <div class="resume">{{ fields.field_sous_titre.content }}</div>
+
+
+        <!-- .resume --></div>
+    <!-- .vignette_deco2   --></li>{% endif %}
