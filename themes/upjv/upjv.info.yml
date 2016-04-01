@@ -26,6 +26,7 @@ regions:
   upjv_info_quatre_bloc_2: 'UPJV Info 4 Blocs : 2'
   upjv_info_quatre_bloc_3: 'UPJV Info 4 Blocs : 3'
   upjv_info_quatre_bloc_4: 'UPJV Info 4 Blocs : 4'
+  upjv_info_adr_bloc: 'UPJV Info Adresse bloc'
   upjv_pre_footer: 'UPJV Pre-FOOTER'
   upjv_pre_footer_logo: 'UPJV Pre-FOOTER logo'
   footer: 'Footer'

@@ -199,11 +199,7 @@
                                                     <h2><span>VOUS ÊTES</span></h2>
 
 
-
-
-                                                        {{ page.upjv_info_bloc_vous }}
-
-
+                                                    {{ page.upjv_info_bloc_vous }}
 
 
                                                 </div><!-- .style_2 --></div>
@@ -339,6 +335,14 @@
         {% if page.upjv_info_quatre_bloc_1 or page.upjv_info_quatre_bloc_2 or page.upjv_info_quatre_bloc_3 or page.upjv_info_quatre_bloc_4 %}
     </div>
     {% endif %}
+
+    {# UPJV INFO ADRESSE #}
+    {% if page.upjv_info_adr_bloc %}
+        {% block upjv_info_adr_bloc %}
+            <div class="upjv_info_adr_bloc container"><hr>{{ page.upjv_info_adr_bloc }}</div>
+        {% endblock %}
+    {% endif %}
+
 </div>
 <hr class="separateur_sections_page">
 
