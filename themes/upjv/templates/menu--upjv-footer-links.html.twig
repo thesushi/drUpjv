@@ -1,0 +1,16 @@
+{% import _self as menus %}
+
+  {% if items %}
+      <ul id="menu_pied_page">
+          {% for item in items %}
+              <li>
+                  <a href="{{ item.url }}">
+                      {{ item.title }}
+                  </a>
+              </li>
+
+          {% endfor %}
+      </ul>
+
+  {% endif %}
+

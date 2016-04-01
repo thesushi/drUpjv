@@ -21,3 +21,11 @@ div.centeredText {
 div.centeredText  h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
+form.contact-form {
+    margin: 10px;
+    max-width: 60%;
+}
+div.sliderDiv img {
+    width: 100%;
+    height: auto;
+}
