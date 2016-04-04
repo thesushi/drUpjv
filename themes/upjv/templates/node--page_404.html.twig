@@ -1,0 +1,46 @@
+
+    <div id="page_deco" class=" error-page">
+
+        <div id="avec_nav_sans_encadres" class="contenu">
+
+                <h1>{{ label }}</h1>
+            <div>
+
+                <div class="ligne_1">
+
+                    <div class="colonne_1 fullWidth">
+                        <div class="colonne_deco">
+                        <div class="centeredText">
+
+                        {% if content.field_sous_titre %}
+                        <div class="style_4">
+                        <h2> {{ content.field_sous_titre.0 }} </h2>
+                        </div>
+                        {% endif %}
+                       
+
+                        {% if content.field_image %}
+                        {{ content.field_image.0 }}
+                        {% endif %}
+
+                        {% if content.field_li %}
+                        <div class="style_3">
+                        {{ content.field_li.0 }}
+                        {% endif %}
+                        </div>
+                            </div>
+
+                        </div><!-- colonne_deco -->
+                        
+                        
+                    </div><!-- .colonne_1 -->
+
+
+                </div><!-- .ligne_1 -->
+
+
+            </div><!-- / -->
+
+        </div>
+
+    </div>
