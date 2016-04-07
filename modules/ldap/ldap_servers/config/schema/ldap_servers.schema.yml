@@ -1,0 +1,12 @@
+ldap_servers.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    encryption:
+      type: integer
+      label: 'Encryption cypher'
+    encrypt_key:
+      type: boolean
+    require_ssl_for_credentials:
+      type: boolean
+      label: 'Require HTTPS on credential pages'

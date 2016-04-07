@@ -1,0 +1,16 @@
+name: 'LDAP SSO'
+description: 'Implements Single Sign On (SSO) LDAP Authentication'
+type: module
+# core: 8.x
+package: 'Lightweight Directory Access Protocol'
+dependencies:
+  - ldap_servers
+  - ldap_authentication
+
+#configure = admin/config/people/ldap/authentication
+
+# Information added by Drupal.org packaging script on 2016-03-24
+version: '8.x-3.x-dev'
+core: '8.x'
+project: 'ldap'
+datestamp: 1458860953

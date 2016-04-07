@@ -1,0 +1,14 @@
+{
+  "name": "drupal/authorization_drupal_roles",
+  "type": "drupal-module",
+  "description": "Create Drupal roles as part of an Authorization workflow.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/authorization_drupal_roles",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/authorization_drupal_roles",
+    "source": "http://cgit.drupalcode.org/authorization_drupal_roles"
+  },
+  "require": { }
+}
