@@ -721,10 +721,10 @@ $settings['trusted_host_patterns'] = array(
   }
 $databases['default']['default'] = array (
   'database' => 'd8',
-  'username' => 'd8',
-  'password' => 'miage-d8',
+  'username' => 'root',
+  'password' => 'root',
   'prefix' => '',
-  'host' => '149.91.82.144',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',

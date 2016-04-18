@@ -36,3 +36,50 @@ div.error-page img {
     display: block;
     margin: 0 auto;
 }
+
+div.sitemap-box-menu {
+    display: inline-block;
+    float: left;
+    max-width: 30%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    background: #f5f5f5;
+    padding: 1em;
+    margin: 5px;
+}
+
+div.sitemap-box-menu > h2 {
+  color: #FCFEFE;
+  font: 500 1.71429em/1.2 arvoregular, Rockwell, rokkittregular, Tahoma, Verdana, Segoe, sans-serif;
+  padding: 0.1em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  margin-bottom: 0.2em;
+  background-color: #148dc8;
+  text-align: center;
+}
+
+div.sitemap-box-menu > div > ul li {
+    list-style-type: none;
+    list-style: none;
+  }
+
+  div.sitemap-box-menu > div > ul {
+    padding: 0;
+    margin: 0;
+    padding-left: 0px;
+  }
+
+div.sitemap-box-menu > div > ul li:before {
+list-style-type: none;
+list-style: none;
+  background: url(img/puce.svg) no-repeat 0 50% #148cbc;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  margin: 0 0.6em 0 0;
+  width: 10px;
+}
