@@ -19,8 +19,8 @@ dependencies: {  }
 #files[] = tests/ldap_servers.test
 #configure = admin/config/people/ldap/servers
 
-# Information added by Drupal.org packaging script on 2016-03-24
+# Information added by Drupal.org packaging script on 2016-04-07
 version: '8.x-3.x-dev'
 core: '8.x'
 project: 'ldap'
-datestamp: 1458860953
+datestamp: 1460006651
