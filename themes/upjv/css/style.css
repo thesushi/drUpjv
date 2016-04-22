@@ -2248,7 +2248,7 @@ div.vignette_deco2 {
   display: inline-block;
 }
 #partage a {
-  color: #fff;
+
   text-decoration: none;
 }
 #partage ul {
@@ -2264,6 +2264,10 @@ div.vignette_deco2 {
 }
 #partage #partage_pdf {
   margin: 0 0 0 1em;
+  color: #148cbc;
+}
+span.file-link, span.file-link a, span.file-link a:hover, span.file-link:active, span.file-link:visited, span.file-link:link  {
+  color: #148cbc;
 }
 #partage img {
   height: 1.5em;

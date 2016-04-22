@@ -112,7 +112,6 @@
                     <strong class="h2">Partager</strong>
                     <ul id="boutons_actions">
                         <li id="partage_pdf">
-                            <span class="fa fa-file"></span>
                             {{ content.field_file_share.0 }}
                         </li>
                     </ul>
@@ -131,7 +130,14 @@
             {% if content.field_afficher_dans_le_bloc_vous.0['#markup'] == "Activé" and content.field_image_vous_etes_.0 %}
                 <p>{{ content.field_image_vous_etes_.0 }} </p>
             {% endif %}
-
+                {# block upjv_menu_n #}
+                {% if page.navigationprincipale_2 %}
+                    {% block upjv_menu_n %}
+                        <div class="upjv_menu_n container">
+                            {{ page.navigationprincipale_2 }}
+                        </div>
+                    {% endblock %}
+                {% endif %}
 
         </div>
     </div>
