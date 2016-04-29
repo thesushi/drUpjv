@@ -14,9 +14,9 @@
                                     <p>
 
                                     	<ul>
-                                    	<li> Nom d'utilisateur : </li>
-                                    	<li> Adresse email : {{ dump(content) }}</li>
-                                    	<li> <a href="/logout"> Déconnexion</a> </li>
+                                    	<li> Nom d'utilisateur : {{ user.getUserName }}</li>
+                                    	<li> Adresse email :   {{ user.getEmail }}</li>
+                                    	<li> <a href="{{ file_url('user/logout') }}"> Déconnexion</a> </li>
                                     	</ul>
                                     </p>
 

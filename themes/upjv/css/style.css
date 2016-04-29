@@ -1248,23 +1248,24 @@ input[readonly]:focus, input[readonly]:active,
   }
 }
 
-#reseaux_sociaux {
-  bottom: .2em;
+#reseaux_sociaux, .reseaux_sociaux {
+  bottom: .4em;
   list-style: none;
   margin: 0;
   padding: 0;
   position: absolute;
   right: 1em;
+  font-size: 50%;
 }
-#reseaux_sociaux li {
+#reseaux_sociaux li, .reseaux_sociaux li {
   display: inline-block;
   margin: 0 0 0 .25em;
 }
-#reseaux_sociaux a {
+#reseaux_sociaux a, .reseaux_sociaux a {
   color: #fff;
   background: #148cbc;
 }
-#reseaux_sociaux img {
+#reseaux_sociaux img, .reseaux_sociaux img {
   height: 1.5em;
 }
 
@@ -1274,6 +1275,7 @@ input[readonly]:focus, input[readonly]:active,
   margin: -2.5em 0 0;
   position: relative;
   z-index: 50;
+  margin-right: 5px;
 }
 #portails_ent li {
   font: 500 0.92857em Verdana, Geneva, "Bitstream Vera Sans", sans-serif;
@@ -1308,13 +1310,13 @@ input[readonly]:focus, input[readonly]:active,
     font-size: 6.21429em;
   }
 
-  #reseaux_sociaux {
+  #reseaux_sociaux, .reseaux_sociaux  {
     bottom: .25em;
   }
-  #reseaux_sociaux li {
+  #reseaux_sociaux li, .reseaux_sociaux li {
     margin: 0 0 0 .5em;
   }
-  #reseaux_sociaux img {
+  #reseaux_sociaux img, .reseaux_sociaux img {
     height: auto;
   }
 }
@@ -4006,7 +4008,7 @@ div.galerie_defaut div.galerie_playlist ul.galerie1Colonne li a {
     margin: 0 1%;
     width: 48% !important;
   }
-  .accueil #pied_page_logos {
+   #pied_page_logos {
     text-align: center;
   }
 }

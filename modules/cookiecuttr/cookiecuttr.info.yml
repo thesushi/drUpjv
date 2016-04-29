@@ -1,0 +1,9 @@
+name: CookieCuttr
+description: Adds EU Cookie policy notice from http://cookiecuttr.com/
+# core: 8.x
+type: module
+# Information added by Drupal.org packaging script on 2015-09-14
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'cookiecuttr'
+datestamp: 1442226840

@@ -1,0 +1,25 @@
+{% import _self as menus %}
+
+  {% if items or user.getUserName  %}
+        
+        <ul id="portails_ent">
+        {% for item in items %}
+              <li>
+                  <a href="{{ item.url }}">
+                      {{ item.title }}
+                  </a>
+              </li>
+
+          {% endfor %}
+
+                    {% if  user.getUserName %}
+            <li>
+             <a href="{{ file_url('user/logout') }}"> Déconnexion </a>
+             </li>
+          {% endif %}
+
+</ul>
+
+
+  {% endif %}
+

@@ -4,5 +4,7 @@
 function upjv_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $suggestions[] = 'page__node__' . $node->getType();
+
   }
 }
+

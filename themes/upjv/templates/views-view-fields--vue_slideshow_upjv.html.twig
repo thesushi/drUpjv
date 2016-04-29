@@ -2,18 +2,18 @@
 {% if fields.title.content is not null %}
 
 
-    <div data-p="172.50" class="sliderDiv" style="display: none;">
+    <div data-p="172.50" class="sliderDiv" >
         {{ fields.field_image.content }}
-        <div style="background-color: rgba(0, 0, 0, 0.6);; position: absolute; bottom: 0px; left: 0px; font-size: 12px; text-align: left; width: 100%; padding: 5px;">
+        <div class="newSlideJssor">
 
 
-            <span style="display: block; line-height: 1em; text-transform: uppercase; font-size: 24px; color: #FFFFFF;">{{ fields.title.content }}</span>
+            <span class="typeDisplayTitre">{{ fields.title.content }}</span>
             <br>
             {% if fields.field_sous_titre.content is not null %}
-                <span style="display: block; line-height: 1em; font-size: 12px; color: #FFFFFF;">{{ fields.field_sous_titre.content }}</span>
+                <span class="typeDisplaySousTitre">{{ fields.field_sous_titre.content }}</span>
             {% endif %}
     {% if fields.field_url.content is not null %}
-            <a href="{{ fields.field_url.content }}" style='float: right;'>
+            <a href="{{ fields.field_url.content }}" class="righted">
 
                  {% if fields.field_image_band.content %}
                     {{  fields.field_image_band.content }}

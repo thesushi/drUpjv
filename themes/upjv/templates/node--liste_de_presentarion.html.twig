@@ -1,0 +1,56 @@
+{% if content.field_sous_titre.0 %}
+
+    {% if content.field_image.0 %}
+        <div id="bandeau_visuel">
+
+
+            {{ content.field_image.0 }}
+        </div>
+    {% endif %}
+    <div id="page_deco">
+
+        <div id="avec_nav_sans_encadres" class="contenu">
+
+            {% if content.field_sous_titre.0 %}
+
+                <h1>{{ content.field_sous_titre.0 }}</h1>
+            {% endif %}
+            <div>
+
+                  
+                        <div class="colonne_deco">
+                  
+                                <div class="style_4">
+                            
+                              
+                                
+                                {{ content.field_vue_a_utiliser.0 }}
+                               
+                                            
+                                       
+                                          
+                                       
+                                        
+                                
+                                </div><!-- .style_1 -->  
+                        </div><!-- colonne_deco -->
+                    </div><!-- .colonne_1 -->
+
+
+       
+
+        </div>
+
+
+
+
+        <div id="navigation">
+
+            <div id="rubrique_niveau_2">
+                {{ label }}
+            </div>
+
+
+        </div>
+    </div>
+{% endif %}

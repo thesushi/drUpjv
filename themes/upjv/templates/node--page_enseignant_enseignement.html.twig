@@ -1,0 +1,58 @@
+{% if content.field_nom.0 %}
+    {% if content.field_image.0 %}
+        <div id="bandeau_visuel">
+
+
+            {{ content.field_image.0 }}
+        </div>
+    {% endif %}
+    <div id="page_deco">
+
+        <div id="avec_nav_sans_encadres" class="contenu">
+
+            {% if content.field_sous_titre.0 %}
+                <h1>{{ content.field_sous_titre.0 }}</h1>
+            {% endif %}
+
+            <div>
+
+                        <div class="colonne_deco">
+                        <div class="style_3 imgInDetail">
+                            <div class="infoItemDetail"> 
+
+                            <ul>
+                            <li>Nom : {{ content.field_nom.0 }} </li>
+                           {% if content.field_prenoms_si_enseignants_.0 %} 
+                                <li>Prénom : {{ content.field_prenoms_si_enseignants_.0 }}</li>
+                                {% endif %}
+                           </ul>
+                           </div>
+                        <p class="infoImgDetail">
+                        {% if content.field_image_vous_etes_ %}
+                         {{ content.field_image_vous_etes_.0 }}
+                        {% endif %}
+                           </p>
+                        </div>
+                            {% if content.field_info.0 %}
+                                <div class="style_4">
+                                    {{ content.field_info.0 }}
+                                </div><!-- .style_1 -->  
+                                {% endif %}
+                        </div><!-- colonne_deco -->
+
+                </div><!-- .ligne_1 -->
+
+
+            </div><!-- / -->
+
+
+
+        <div id="navigation">
+
+            <div id="rubrique_niveau_2">
+                {{ label }}
+            </div>
+
+        </div>
+    </div>
+{% endif %}

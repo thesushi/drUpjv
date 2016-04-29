@@ -88,3 +88,107 @@ button.button.btn {
     margin: 5px;
     padding: 5px;
 }
+
+.left {
+  float: left;
+}
+ul.nostyle {
+ list-style: none;
+}
+
+ul.nostyle  li a:active, ul.nostyle  li a:hover, ul.nostyle  li a:visited, ul.nostyle  li a, ul.nostyle li a:link{
+ text-decoration: none;
+ display: block;
+ border: none;
+}
+div.imgInDetail {
+  max-height: 6em;
+  height: 6em;
+}
+p.infoImgDetail {
+  float: right;
+    display: inline-block;
+ 
+}
+
+p.infoImgDetail img{
+max-height: 4em;
+width: auto;
+}
+
+div.infoItemDetail {
+  float: left;
+  display: inline-block;
+  position: relative;
+  max-width: 50em;
+}
+
+span.blocsItemList {
+  display: table;
+  margin: 0 auto;
+}
+span.blocsItemList ul {
+  margin: 0 auto;
+}
+span.blocsItemList ul li{
+  display: inline-block;
+  list-style-type:  none;
+  list-style:  none;
+  background: none;
+  padding: 5px;
+  vertical-align: top;
+}
+
+span.blocsItemList ul li{
+  height: auto;
+  width: 9em;
+}
+
+span.blocsItemList ul:not([class]):not([id]) li:before {
+  background: none;
+}
+.cc-cookies {
+  width: 100%;
+}
+
+div.jssorSlideDiv {
+  position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:300px;overflow:hidden;visibility:hidden;
+}
+
+.jssora07l {
+  top:0px;left:8px; width:50px;height:50px;
+}
+
+.jssora07r {
+  top:0px;right:8px;width:50px;height:50px;
+}
+div.divSlidesJssor {
+  cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 300px; overflow: hidden;
+}
+div.loadingJssor {
+  position: absolute; top: 0px; left: 0px;
+}
+div.filterJssor {
+  filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;
+}
+div.loadingImgJssor {
+  position:absolute;display:block;background:url('../img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;
+}
+div.smallWidth { 
+  width:130px;
+}
+div.hiddenDiv {
+  display: none;
+}
+.righted {
+  float: right;
+}
+div.newSlideJssor {
+  background-color: rgba(0, 0, 0, 0.6);; position: absolute; bottom: 0px; left: 0px; font-size: 12px; text-align: left; width: 100%; padding: 5px;
+}
+span.typeDisplayTitre {
+  display: block; line-height: 1em; text-transform: uppercase; font-size: 24px; color: #FFFFFF;
+}
+span.typeDisplaySousTitre {
+  display: block; line-height: 1em; font-size: 12px; color: #FFFFFF;
+}
