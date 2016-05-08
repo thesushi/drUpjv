@@ -703,6 +703,7 @@ $settings['trusted_host_patterns'] = array(
    '^149.91.82.144$',
    '^localhost$',
    '^127.0.0.1$',
+   '^miage.u-picardie.fr',
 
 );
 

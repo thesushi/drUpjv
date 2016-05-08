@@ -1,3 +1,16 @@
+---------------------
+Informations : 
+---------------------
+
+Projet du module outils multimédias
+
+ * LDAP
+ * RESPONSIVE
+ * SEO 
+ * Login : admin / miage-d8
+ * vHost: miage.u-picardie.fr
+ * sitemap ( + xml )
+
 
 CONTENTS OF THIS FILE
 ---------------------

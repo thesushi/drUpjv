@@ -40,7 +40,7 @@ div.error-page img {
 div.sitemap-box-menu {
     display: inline-block;
     float: left;
-    max-width: 30%;
+    max-width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;

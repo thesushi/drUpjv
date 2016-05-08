@@ -1,20 +1,45 @@
    jQuery(document).ready(function ($) {
-            
-            var jssor_1_options = {
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $ThumbnailNavigatorOptions: {
-                $Class: $JssorThumbnailNavigator$,
-                $Cols: 15,
-                $SpacingX: 3,
-                $SpacingY: 3,
-                $Align: 455
-              }
-            };
-            
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-            
+
+    var nav = $('#bandeau');
+    nav.addClass('bandeau');
+    $( '.menu-btn' ).click(function(){
+        $('#menu_principal').css({ top: nav.height() + 'px' });
+        $('#menu_principal').toggleClass('expand');
+    });
+
+    
+
+    
+    $(window).scroll(function () {
+   
+        if ($(this).scrollTop() > nav.height()) {
+            nav.addClass("f-nav");
+   
+             $('#menu_principal').addClass('menu_fixed');
+            //
+        } else {
+            nav.removeClass("f-nav");
+           
+             $('#menu_principal').removeClass('menu_fixed');
+        }
+    
+    });
+
+    var jssor_1_options = {
+      $ArrowNavigatorOptions: {
+        $Class: $JssorArrowNavigator$
+    },
+    $ThumbnailNavigatorOptions: {
+        $Class: $JssorThumbnailNavigator$,
+        $Cols: 15,
+        $SpacingX: 3,
+        $SpacingY: 3,
+        $Align: 455
+    }
+};
+
+var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
@@ -54,7 +79,7 @@
  * By default, every targetted elements will be hidden when the page is loaded.
  */
 
-(function($) { 
+ (function($) { 
     var jqUnfoldClass = 'jq-unfold'; // class added to triggering elements when targetted ones are shown
     var triggerDataAttr = 'data-unfold-trigger'; // data-tag for triggering elements
     var targetDataAttr = 'data-unfold-target'; // data-tag for targetted elements
@@ -80,7 +105,7 @@
         }
     });
     
-$(window).load(function() {
+    $(window).load(function() {
     // Adding the click event to triggering elements
     $('[' + triggerDataAttr + ']').click(function() {
         // hideAll();
