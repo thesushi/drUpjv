@@ -21,10 +21,8 @@ div.centeredText {
 div.centeredText  h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
-form.contact-form {
-    margin: 10px;
-    max-width: 60%;
-}
+
+
 div.sliderDiv img {
     width: 100%;
     height: auto;
@@ -76,7 +74,7 @@ div.sitemap-box-menu > div > ul li {
 div.sitemap-box-menu > div > ul li:before {
 list-style-type: none;
 list-style: none;
-  background: url(img/puce.svg) no-repeat 0 50% #148cbc;
+  background: url(img/puce.svg) no-repeat 0 50% #F5F5F5;
   content: "";
   display: inline-block;
   height: 10px;
@@ -129,6 +127,9 @@ span.blocsItemList {
 }
 span.blocsItemList ul {
   margin: 0 auto;
+}
+span.blocsItemList ul li:before {
+  background: none;
 }
 span.blocsItemList ul li{
   display: inline-block;
@@ -201,11 +202,13 @@ iframe {
   margin: 0 auto;
   width: 100%
 }
-form {
+form, .contact-message-nous-contacter-form .contact-message-form .contact-form {
   margin: 0 auto;
+  width: 60%;
 }
 @media screen and (max-width: 35em) {
 
-form {
-  width: 90%
-  }}
+form , .contact-message-nous-contacter-form .contact-message-form .contact-form{
+  width: 90%;
+  }
+}

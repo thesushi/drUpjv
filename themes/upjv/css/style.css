@@ -1655,6 +1655,18 @@ ul#meta_menu_button li {
   margin: 0 0.6em 0 0;
   width: 10px;
 }
+
+.contenu .style_4 ul:not([class]):not([id]):not(.noPuce) li:before {
+  background: url(img/puce.svg) no-repeat 0 50% #F5F5F5;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  margin: 0 0.6em 0 0;
+  width: 10px;
+}
+
+
+
 .contenu ul:not([class]):not([id]) li > ul {
   margin-left: 1.5em;
 }
