@@ -36,7 +36,7 @@ assert_options(ASSERT_ACTIVE, TRUE);
 /**
  * Enable local development services.
  */
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+//$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
 /**
  * Show all error messages, with backtrace information.
@@ -44,7 +44,7 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml'
  * In case the error level could not be fetched from the database, as for
  * example the database connection failed, we rely only on this value.
  */
-$config['system.logging']['error_level'] = 'verbose';
+$config['system.logging']['error_level'] = '';
 
 /**
  * Disable CSS and JS aggregation.

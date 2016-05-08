@@ -8,5 +8,5 @@ services:
 parameters:
   twig.config:
     debug : false
-    auto_reload: true
-    cache: false
+    auto_reload: false
+    cache: true

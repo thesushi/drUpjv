@@ -33,7 +33,7 @@ assert_options(ASSERT_ACTIVE, TRUE);
 /**
  * Enable local development services.
  */
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/development.services.yml';
+//$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/development.services.yml';
 
 /**
  * Show all error messages, with backtrace information.
@@ -41,13 +41,13 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/development.servi
  * In case the error level could not be fetched from the database, as for
  * example the database connection failed, we rely only on this value.
  */
-$config['system.logging']['error_level'] = 'verbose';
+$config['system.logging']['error_level'] = '';
 
 /**
  * Disable CSS and JS aggregation.
  */
-$config['system.performance']['css']['preprocess'] = TRUE;
-$config['system.performance']['js']['preprocess'] = TRUE;
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
 
 /**
  * Disable the render cache (this includes the page cache).
@@ -61,7 +61,7 @@ $config['system.performance']['js']['preprocess'] = TRUE;
  *
  * Do not use this setting until after the site is installed.
  */
- $settings['cache']['bins']['render'] = 'cache.backend.null';
+ //$settings['cache']['bins']['render'] = 'cache.backend.null';
 
 /**
  * Disable Dynamic Page Cache.
@@ -70,7 +70,7 @@ $config['system.performance']['js']['preprocess'] = TRUE;
  * cacheability metadata is present (and hence the expected behavior). However,
  * in the early stages of development, you may want to disable it.
  */
-$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null'; 
+//$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null'; 
 
 /**
  * Allow test modules and themes to be installed.
