@@ -722,8 +722,8 @@ $settings['trusted_host_patterns'] = array(
   }
 $databases['default']['default'] = array (
   'database' => 'd8',
-  'username' => 'root',
-  'password' => 'root',
+  'username' => 'd8',
+  'password' => 'miage-d8',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
