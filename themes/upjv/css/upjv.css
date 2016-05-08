@@ -197,3 +197,15 @@ span.typeDisplaySousTitre {
   margin: 0 auto;
   margin-top: 15px;
 }
+iframe {
+  margin: 0 auto;
+  width: 100%
+}
+form {
+  margin: 0 auto;
+}
+@media screen and (max-width: 35em) {
+
+form {
+  width: 90%
+  }}
