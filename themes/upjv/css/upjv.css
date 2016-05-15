@@ -217,3 +217,7 @@ div.centeredText > .style_3 a:link,  div.centeredText > .style_3 a:visited, div.
   color: #fff;
   text-decoration: none;
 }
+
+div.alert {
+  display: none;
+}
