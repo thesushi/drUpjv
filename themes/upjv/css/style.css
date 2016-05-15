@@ -805,6 +805,9 @@ input[readonly]:focus, input[readonly]:active,
   .menu-btn {
     display: none;
   }
+  #pied_page_rubriques ul {
+  display: none;
+}
   #navigation {
     float: left;
     width: 20%;
@@ -4117,6 +4120,10 @@ button[data-unfold-trigger] span[class] {
   margin: 4px 0;
   background-color: #FFF;
   z-index: 99;
+}
+
+#pied_page_rubriques ul {
+  display: none;
 }
 
 #reseaux_sociaux {
