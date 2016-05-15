@@ -1,6 +1,0 @@
-ldap_authentication.settings:
-  type: mapping
-  label: Settings
-  mapping:
-    ldap_authentication_conf:
-      type: mapping

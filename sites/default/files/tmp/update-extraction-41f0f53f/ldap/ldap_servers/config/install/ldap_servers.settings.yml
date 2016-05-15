@@ -1,3 +1,0 @@
-encrypt_key: false
-encryption:  LDAP_SERVERS_ENC_TYPE_CLEARTEXT
-require_ssl_for_credentials: 0

@@ -1,6 +1,0 @@
-ldap_help.settings:
-  type: mapping
-  label: Settings
-  mapping:
-    watchdog_detail:
-      type: integer
