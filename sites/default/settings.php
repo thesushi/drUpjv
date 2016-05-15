@@ -706,6 +706,7 @@ $settings['trusted_host_patterns'] = array(
    '^192.168.0.18',
    '^62.64.44.207',
    '^miage.u-picardie.fr',
+   '^miage.jfranclin.top',
 
 );
 
