@@ -212,3 +212,8 @@ form , .contact-message-nous-contacter-form .contact-message-form .contact-form{
   width: 90%;
   }
 }
+
+div.centeredText > .style_3 a:link,  div.centeredText > .style_3 a:visited, div.centeredText > .style_3 a{
+  color: #fff;
+  text-decoration: none;
+}
