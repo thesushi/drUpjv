@@ -1,13 +1,7 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\ldap_servers\Form\ServerForm.
- */
-
 namespace Drupal\ldap_servers\Form;
 
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -17,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @package Drupal\ldap_servers\Form
  */
 class ServerForm extends EntityForm {
+
   /**
    * {@inheritdoc}
    */
@@ -26,8 +21,9 @@ class ServerForm extends EntityForm {
     $server = $this->entity;
 
     $form['server'] = array(
-      '#type' => 'fieldset',
+      '#type' => 'details',
       '#title' => t('Server'),
+      '#open' => TRUE,
     );
 
     $form['server']['label'] = array(
@@ -96,7 +92,7 @@ class ServerForm extends EntityForm {
     );
 
     $form['bind'] = array(
-      '#type' => 'fieldset',
+      '#type' => 'details',
       '#title' => t('Binding'),
     );
 
@@ -139,8 +135,9 @@ class ServerForm extends EntityForm {
       '#title' => t('DN for non-anonymous search'),
       '#size' => 80,
       '#states' => array(
-        'enabled' => array(   // action to take.
-          ':input[name=bind_method]' => array('value' => LDAP_SERVERS_BIND_METHOD_SERVICE_ACCT),
+    // Action to take.
+        'enabled' => array(
+          ':input[name=bind_method]' => array('value' => strval(LDAP_SERVERS_BIND_METHOD_SERVICE_ACCT)),
         ),
       ),
     );
@@ -151,8 +148,9 @@ class ServerForm extends EntityForm {
       '#description' => $server->get('bindpw') ? t("Password exists in database.") : t("<strong>Warning: No password exists in database.</strong>"),
       '#size' => 20,
       '#states' => array(
-        'enabled' => array(   // action to take.
-          ':input[name=bind_method]' => array('value' => LDAP_SERVERS_BIND_METHOD_SERVICE_ACCT),
+    // Action to take.
+        'enabled' => array(
+          ':input[name=bind_method]' => array('value' => strval(LDAP_SERVERS_BIND_METHOD_SERVICE_ACCT)),
         ),
       ),
     );
@@ -165,7 +163,7 @@ class ServerForm extends EntityForm {
     );
 
     $form['users'] = array(
-      '#type' => 'fieldset',
+      '#type' => 'details',
       '#title' => t('Users'),
     );
 
@@ -238,7 +236,7 @@ class ServerForm extends EntityForm {
         enter a unique and persistent ldap attribute for users.  In cases
         where DN does not change, enter "dn" here.
         If no such attribute exists, leave this blank.'
-        ),
+      ),
     );
 
     $form['users']['unique_persistent_attr_binary'] = array(
@@ -259,24 +257,23 @@ class ServerForm extends EntityForm {
         Base DNs are entered above.'),
     );
 
-    // $form['users']['ldap_to_drupal_user'] = array(
-    //   '#default_value' => $server->get('ldap_to_drupal_user'),
-    //   'fieldset' => 'users',
-    //   '#disabled' => (!module_exists('php')),
-    //   '#type' => 'textarea',
-    //   '#cols' => 25,
-    //   '#rows' => 5,
-    //   '#title' => t('PHP to transform Drupal login username to LDAP UserName attribute.'),
-    //   '#description' => t('This will appear as disabled unless the "PHP filter" core module is enabled. Enter PHP to transform Drupal username to the value of the UserName attribute.
-    //     The code should print the UserName attribute.
-    //     PHP filter module must be enabled for this to work.
-    //     The variable $name is available and is the user\'s login username.
-    //     Careful, bad PHP code here will break your site. If left empty, no name transformation will be done.
-    //     <br/>Example:<br/>Given the user will logon with jdoe@xyz.com and you want the ldap UserName attribute to be
-    //     jdoe.<br/><code>$parts = explode(\'@\', $name); if (count($parts) == 2) {print $parts[0]};</code>'),
-    // );
+    $form['users']['ldap_to_drupal_user'] = array(
+      '#default_value' => $server->get('ldap_to_drupal_user'),
+      '#disabled' => (!\Drupal::moduleHandler()->moduleExists('php')),
+      '#type' => 'textarea',
+      '#cols' => 25,
+      '#rows' => 5,
+      '#title' => t('PHP to transform Drupal login username to LDAP UserName attribute.'),
+      '#description' => t('This will appear as disabled unless the "PHP filter" core module is enabled. Enter PHP to transform Drupal username to the value of the UserName attribute.
+        The code should print the UserName attribute.
+        PHP filter module must be enabled for this to work.
+        The variable $name is available and is the user\'s login username.
+        Careful, bad PHP code here will break your site. If left empty, no name transformation will be done.
+        <br/>Example:<br/>Given the user will logon with jdoe@xyz.com and you want the ldap UserName attribute to be
+        jdoe.<br/><code>$parts = explode(\'@\', $name); if (count($parts) == 2) {print $parts[0]};</code>'),
+    );
 
-   $form['users']['testing_drupal_username'] = array(
+    $form['users']['testing_drupal_username'] = array(
       '#default_value' => $server->get('testing_drupal_username'),
       '#type' => 'textfield',
       '#size' => 30,
@@ -284,7 +281,7 @@ class ServerForm extends EntityForm {
       '#description' => t('This is optional and used for testing this server\'s configuration against an actual username.  The user need not exist in Drupal and testing will not affect the user\'s LDAP or Drupal Account.'),
     );
 
-   $form['users']['testing_drupal_user_dn'] = array(
+    $form['users']['testing_drupal_user_dn'] = array(
       '#default_value' => $server->get('testing_drupal_user_dn'),
       '#type' => 'textfield',
       '#size' => 120,
@@ -293,7 +290,7 @@ class ServerForm extends EntityForm {
     );
 
     $form['groups'] = array(
-      '#type' => 'fieldset',
+      '#type' => 'details',
       '#title' => t('Groups'),
     );
 
@@ -311,7 +308,8 @@ class ServerForm extends EntityForm {
       '#title' => t('Name of Group Object Class'),
       '#description' => t('e.g. groupOfNames, groupOfUniqueNames, group.'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
@@ -326,7 +324,8 @@ class ServerForm extends EntityForm {
          user should be considered to be in group A and B.  If your LDAP has nested groups, but you
          want to ignore nesting, leave this unchecked.'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
@@ -339,26 +338,29 @@ class ServerForm extends EntityForm {
         Active Directory and openLdap with memberOf overlay fit this model.'),
       '#disabled' => FALSE,
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
     );
 
     $form['groups']['grp_user_memb_attr'] = array(
-        '#default_value' => $server->get('grp_user_memb_attr'),
-          '#type' => 'textfield',
-        '#size' => 30,
-        '#title' => t('Attribute in User Entry Containing Groups'),
-        '#description' => t('e.g. memberOf <em>(case sensitive)</em>.'),
-        '#states' => array(
-          'enabled' => array(   // action to take.
-            ':input[name=grp_user_memb_attr_exists]' => array('checked' => TRUE),
-          ),
-            'visible' => array(   // action to take.
-            ':input[name=grp_unused]' => array('checked' => FALSE),
-          ),
+      '#default_value' => $server->get('grp_user_memb_attr'),
+      '#type' => 'textfield',
+      '#size' => 30,
+      '#title' => t('Attribute in User Entry Containing Groups'),
+      '#description' => t('e.g. memberOf <em>(case sensitive)</em>.'),
+      '#states' => array(
+    // Action to take.
+        'enabled' => array(
+          ':input[name=grp_user_memb_attr_exists]' => array('checked' => TRUE),
         ),
+    // Action to take.
+        'visible' => array(
+          ':input[name=grp_unused]' => array('checked' => FALSE),
+        ),
+      ),
     );
 
     $form['groups']['grp_memb_attr'] = array(
@@ -368,7 +370,8 @@ class ServerForm extends EntityForm {
       '#title' => t('LDAP Group Entry Attribute Holding User\'s DN, CN, etc.'),
       '#description' => t('e.g uniquemember, memberUid'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
@@ -381,7 +384,8 @@ class ServerForm extends EntityForm {
       '#title' => t('User attribute held in "LDAP Group Entry Attribute Holding..."'),
       '#description' => t('This is almost always "dn" (which technically isn\'t an attribute).  Sometimes its "cn".'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
@@ -391,12 +395,13 @@ class ServerForm extends EntityForm {
       '#default_value' => $server->get('grp_derive_from_dn'),
       '#type' => 'checkbox',
       '#title' => t('Groups are derived from user\'s LDAP entry DN.') . '<em>' .
-        t('This
+      t('This
         group definition has very limited functionality and most modules will
         not take this into account.  LDAP Authorization will.') . '</em>',
       '#disabled' => FALSE,
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
@@ -409,43 +414,47 @@ class ServerForm extends EntityForm {
       '#title' => t('Attribute of the User\'s LDAP Entry DN which contains the group'),
       '#description' => t('e.g. ou'),
       '#states' => array(
-        'enabled' => array(   // action to take.
+    // Action to take.
+        'enabled' => array(
           ':input[name=grp_derive_from_dn]' => array('checked' => TRUE),
         ),
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
     );
 
-   $form['groups']['grp_test_grp_dn'] = array(
+    $form['groups']['grp_test_grp_dn'] = array(
       '#default_value' => $server->get('grp_test_grp_dn'),
       '#type' => 'textfield',
       '#size' => 120,
       '#title' => t('Testing LDAP Group DN'),
       '#description' => t('This is optional and can be useful for debugging and validating forms.'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
     );
 
-   $form['groups']['grp_test_grp_dn_writeable'] = array(
+    $form['groups']['grp_test_grp_dn_writeable'] = array(
       '#default_value' => $server->get('grp_test_grp_dn_writeable'),
       '#type' => 'textfield',
       '#size' => 120,
       '#title' => t('Testing LDAP Group DN that is writable.  WARNING the test script for the server will create, delete, and add members to this group!'),
       '#description' => t('This is optional and can be useful for debugging and validating forms.'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name=grp_unused]' => array('checked' => FALSE),
         ),
       ),
     );
 
     $form['pagination'] = array(
-      '#type' => 'fieldset',
+      '#type' => 'details',
       '#title' => t('Pagination'),
     );
 
@@ -466,7 +475,8 @@ class ServerForm extends EntityForm {
         or LDAP Feeds will be allowed to set a smaller page size, but not
         a larger one.'),
       '#states' => array(
-        'visible' => array(   // action to take.
+    // Action to take.
+        'visible' => array(
           ':input[name="search_pagination"]' => array('checked' => TRUE),
         ),
       ),
@@ -483,7 +493,7 @@ class ServerForm extends EntityForm {
 
     // Handle the password as the form is empty
     // If there is a new password encrypt it.
-    if ( null !== $form_state->getValue('bindpw') && $form_state->getValue('bindpw') ) {
+    if (NULL !== $form_state->getValue('bindpw') && $form_state->getValue('bindpw')) {
       $server->set('bindpw', ldap_servers_encrypt($form_state->getValue('bindpw')));
     }
     // What does bindpw_new do?
@@ -491,14 +501,16 @@ class ServerForm extends EntityForm {
       $server->set('bindpw_new', ldap_servers_encrypt($form_state->getValue('bindpw_new')));
       $server->set('bindpw', ldap_servers_encrypt($form_state->getValue('bindpw_new')));
     }
-    // If the bindpw_clear is checked clear the password from the database
-    elseif ( $form_state->getValue('bindpw_clear') ) {
+    // If the bindpw_clear is checked clear the password from the database.
+    elseif ($form_state->getValue('bindpw_clear')) {
       $server->set('bindpw', NULL);
     }
-    // If there isn't a password then load the existing one
-    else {
+    // If there isn't a password then load the existing one (unless this an anonymous bind server)
+    elseif ($form_state->getValue('bind_method') != LDAP_SERVERS_BIND_METHOD_ANON || $form_state->getValue('bind_method') != LDAP_SERVERS_BIND_METHOD_ANON_USER) {
       $entity = ldap_servers_get_servers($server->id());
-      $server->set('bindpw', $entity->get('bindpw'));
+      if ($server->get('bindpw')) {
+        $server->set('bindpw', $entity->get('bindpw'));
+      }
     }
 
     $status = $server->save();
