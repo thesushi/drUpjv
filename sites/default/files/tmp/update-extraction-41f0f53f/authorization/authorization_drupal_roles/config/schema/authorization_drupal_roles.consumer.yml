@@ -1,0 +1,4 @@
+authorization.consumer.plugin.authorization_drupal_roles:
+  type: mapping
+  label: 'Authorization Drupal roles consumer settings'
+  mapping:
